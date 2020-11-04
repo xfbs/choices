@@ -79,8 +79,7 @@ fn main() -> anyhow::Result<()> {
 
     let results: average::Variance = rx.iter().take(opt.runs).collect();
 
-    println!("mean = {} variance = {}", results.mean(), results.error());
-    //println!("pop variance = {}", results.population_variance());
+    println!("mean = {} deviation = {}", results.mean(), results.sample_variance().sqrt());
 
     Ok(())
 }
